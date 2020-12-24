@@ -1,0 +1,15 @@
+{
+  "name": "tts_googlehome",
+  "version": "1.0.0",
+  "description": "text-to-speech with GoogleHome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mganeko",
+  "license": "MIT",
+  "dependencies": {
+    "castv2-client": "^1.2.0",
+    "google-tts-api": "^2.0.0"
+  }
+}
