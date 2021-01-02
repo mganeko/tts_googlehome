@@ -1,5 +1,5 @@
 //
-// node test/test_speak.js [text [lang]]
+// node test/test_speakmulti.js [text [lang]]
 //
 
 "use strict"
