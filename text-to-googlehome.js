@@ -28,6 +28,36 @@ function speakToDeviceAsync(host, text, lang) {
   return promise;
 }
 
+// --- cast text as audio to multi Device ---
+// return Promise
+function speakToMultiDeviceAsync(hosts, text, lang) {
+  const url = getUrlfromText(text, lang);
+  console.warn('hosts:', hosts);
+
+  const promiseArray = [];
+  hosts.forEach(host => {
+    const promise = castUrlToDeviceAsync(host, url);
+    promiseArray.push(promise);
+  });
+  console.log('promise array:', promiseArray);
+
+  return Promise.all(promiseArray);
+}
+
+// --- cast text as audio to multi Device ---
+// return nothing
+function speakToMultiDeviceAnyway(hosts, text, lang) {
+  const url = getUrlfromText(text, lang);
+  console.warn('hosts:', hosts);
+
+  hosts.forEach(host => {
+    castUrlToDeviceAsync(host, url)
+      .then(e => console.warn('cast to %s OK', host))
+      .catch(err => console.error('cast to %s ERROR', host, err))
+  });
+}
+
+
 // --- convert text to audio URL  ---
 function getUrlfromText(text, lang) {
   const useLanguage = lang ? lang : 'en-US';
@@ -81,5 +111,7 @@ function castUrlToDeviceAsync(host, url) {
 // ===== exports =====
 
 exports.speakToDeviceAsync = speakToDeviceAsync; // cast text as audio to Device
+exports.speakToMultiDeviceAsync = speakToMultiDeviceAsync; // cast text as audio to Multi Device
+exports.speakToMultiDeviceAnyway = speakToMultiDeviceAnyway; // cast text as audio to Multi Device
 exports.getUrlfromText = getUrlfromText; // convert text to audio URL
 exports.castUrlToDeviceAsync = castUrlToDeviceAsync; // cast audio url to Device
