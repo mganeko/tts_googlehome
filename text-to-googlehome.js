@@ -32,7 +32,7 @@ function speakToDeviceAsync(host, text, lang) {
 // return Promise
 function speakToMultiDeviceAsync(hosts, text, lang) {
   const url = getUrlfromText(text, lang);
-  console.warn('hosts:', hosts);
+  //console.warn('hosts:', hosts);
 
   const promiseArray = [];
   hosts.forEach(host => {
@@ -48,7 +48,7 @@ function speakToMultiDeviceAsync(hosts, text, lang) {
 // return nothing
 function speakToMultiDeviceAnyway(hosts, text, lang) {
   const url = getUrlfromText(text, lang);
-  console.warn('hosts:', hosts);
+  //console.warn('hosts:', hosts);
 
   hosts.forEach(host => {
     castUrlToDeviceAsync(host, url)
