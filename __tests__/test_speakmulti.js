@@ -22,6 +22,7 @@ describe('speak multi device', () => {
   });
 
   test('ja "複数に話すテスト" multi', () => {
-    return expect(TTGoogleHome.speakToMultiDeviceAsync(hosts, "複数に話すテスト", "ja")).resolves.toStrictEqual(["Device notified OK", "Device notified OK"]);
+    const expectResult = { "status": "fulfilled", "value": "Device notified OK" };
+    return expect(TTGoogleHome.speakToMultiDeviceAsync(hosts, "複数に話すテスト", "ja")).resolves.toStrictEqual([expectResult, expectResult]);
   });
 });

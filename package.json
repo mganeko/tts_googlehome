@@ -1,6 +1,6 @@
 {
-  "name": "tts_googlehome",
-  "version": "1.0.0",
+  "name": "tts-googlehome",
+  "version": "0.9.0",
   "description": "text-to-speech with GoogleHome",
   "main": "index.js",
   "scripts": {
