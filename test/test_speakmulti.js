@@ -28,17 +28,17 @@ console.warn('TTS multi:', hosts, text, lang);
 
 // --- speak ---
 
-TTGoogleHome.speakToMultiDeviceAnyway(hosts, text, lang)
+//TTGoogleHome.speakToMultiDeviceAnyway(hosts, text, lang)
 
-// TTGoogleHome.speakToMultiDeviceAsync(hosts, text, lang)
-//   .then(e => {
-//     // -- OK --
-//     console.warn('speak [%s] to %s --> ', text, hosts, e);
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     // -- error --
-//     console.error('speak ERROR:', err);
-//     process.exit(1);
-//   });
+TTGoogleHome.speakToMultiDeviceAsync(hosts, text, lang)
+  .then(e => {
+    // -- OK --
+    console.warn('speak [%s] to %s --> ', text, hosts, e);
+    process.exit(0);
+  })
+  .catch(err => {
+    // -- error --
+    console.error('speak ERROR:', err);
+    process.exit(1);
+  });
 

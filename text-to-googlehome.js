@@ -1,8 +1,10 @@
 //
 // text-to-speech with GoogleHome
+//   node v12.9 or later
 //   use google-tts-api, castv2-client
 //
 // speakToDeviceAsync(host, text, lang); // cast text as audio to Device
+// speakToMultiDevice(hosts, text, lang); // cast text as audio to multi Device
 // getUrlfromText(text, lang); // convert text to audio URL
 // castUrlToDeviceAsync(host, url); // cast audio url to Device
 //
@@ -41,7 +43,7 @@ function speakToMultiDeviceAsync(hosts, text, lang) {
   });
   console.log('promise array:', promiseArray);
 
-  return Promise.all(promiseArray);
+  return Promise.allSettled(promiseArray);
 }
 
 // --- cast text as audio to multi Device ---
