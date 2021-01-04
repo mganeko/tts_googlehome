@@ -5,7 +5,7 @@ const deviceConfig = require('../_conf/test_config').deviceConfig;
 const hosts = [deviceConfig.TEST_DEVICE1_HOSTNAME, deviceConfig.TEST_DEVICE2_HOSTNAME];
 jest.setTimeout(40 * 1000);
 
-const TTGoogleHome = require('../text-to-googlehome');
+const TTGoogleHome = require('..');
 
 // --- single and multi test ---
 describe('speak multi device', () => {

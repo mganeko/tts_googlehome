@@ -1,6 +1,6 @@
 "use strict"
 
-const TTGoogleHome = require('../text-to-googlehome');
+const TTGoogleHome = require('..');
 
 // --- single test ---
 // test('ja "こんにちは"', () => {
