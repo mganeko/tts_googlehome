@@ -4,7 +4,7 @@
 //   use google-tts-api, castv2-client
 //
 // speakToDeviceAsync(host, text, lang); // cast text as audio to Device
-// speakToMultiDevice(hosts, text, lang); // cast text as audio to multi Device
+// speakToMultiDeviceAsync(hosts, text, lang); // cast text as audio to multi Device
 // getUrlfromText(text, lang); // convert text to audio URL
 // castUrlToDeviceAsync(host, url); // cast audio url to Device
 //
@@ -46,21 +46,9 @@ function speakToMultiDeviceAsync(hosts, text, lang) {
   return Promise.allSettled(promiseArray);
 }
 
-// --- cast text as audio to multi Device ---
-// return nothing
-function speakToMultiDeviceAnyway(hosts, text, lang) {
-  const url = getUrlfromText(text, lang);
-  //console.warn('hosts:', hosts);
-
-  hosts.forEach(host => {
-    castUrlToDeviceAsync(host, url)
-      .then(e => console.warn('cast to %s OK', host))
-      .catch(err => console.error('cast to %s ERROR', host, err))
-  });
-}
-
 
 // --- convert text to audio URL  ---
+//  return URL
 function getUrlfromText(text, lang) {
   const useLanguage = lang ? lang : 'en-US';
   const SERVICE_URL = 'https://translate.google.com';
@@ -114,6 +102,5 @@ function castUrlToDeviceAsync(host, url) {
 
 exports.speakToDeviceAsync = speakToDeviceAsync; // cast text as audio to Device
 exports.speakToMultiDeviceAsync = speakToMultiDeviceAsync; // cast text as audio to Multi Device
-exports.speakToMultiDeviceAnyway = speakToMultiDeviceAnyway; // cast text as audio to Multi Device
 exports.getUrlfromText = getUrlfromText; // convert text to audio URL
 exports.castUrlToDeviceAsync = castUrlToDeviceAsync; // cast audio url to Device
