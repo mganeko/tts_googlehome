@@ -4,7 +4,7 @@
 
 "use strict"
 
-const TTGoogleHome = require('../text-to-googlehome');
+const TTGoogleHome = require('..');
 
 let host = null;
 let text = 'テストです';

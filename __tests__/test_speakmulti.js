@@ -5,7 +5,7 @@ const deviceConfig = require('../_conf/test_config').deviceConfig;
 const hosts = [deviceConfig.TEST_DEVICE1_HOSTNAME, deviceConfig.TEST_DEVICE2_HOSTNAME];
 jest.setTimeout(40 * 1000);
 
-const TTGoogleHome = require('../text-to-googlehome');
+const TTGoogleHome = require('..');
 
 // --- single and multi test ---
 describe('speak multi device', () => {
@@ -22,6 +22,7 @@ describe('speak multi device', () => {
   });
 
   test('ja "複数に話すテスト" multi', () => {
-    return expect(TTGoogleHome.speakToMultiDeviceAsync(hosts, "複数に話すテスト", "ja")).resolves.toStrictEqual(["Device notified OK", "Device notified OK"]);
+    const expectResult = { "status": "fulfilled", "value": "Device notified OK" };
+    return expect(TTGoogleHome.speakToMultiDeviceAsync(hosts, "複数に話すテスト", "ja")).resolves.toStrictEqual([expectResult, expectResult]);
   });
 });

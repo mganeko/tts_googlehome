@@ -10,7 +10,7 @@ console.warn('read test_config.js');
 
 
 // --- Text-to-speach ---
-const TTGoogleHome = require('../text-to-googlehome');
+const TTGoogleHome = require('..');
 
 const hosts = [deviceConfig.TEST_DEVICE1_HOSTNAME, deviceConfig.TEST_DEVICE2_HOSTNAME];
 let text = '複数に話すテスト';
