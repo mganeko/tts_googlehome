@@ -1,5 +1,5 @@
 node_modules/
-_conf/
+_conf/test_config.js
 stock/
 test_old/
 *.tgz

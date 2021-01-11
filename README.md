@@ -100,6 +100,15 @@ TtsGoogleHome.castUrlToDeviceAsync('xxxxxxxx.local', url)
   });
 ```
 
+## Run test
+
+- copy _conf/test_config.template.js to _conf/test_config.js
+- modify _conf/test_config.js
+  - TEST_DEVICE1_HOSTNAME ... hostname or IP address of Device 1
+  - TEST_DEVICE2_HOSTNAME ... hostname or IP address of Device 2
+- execute test
+  - npm test
+  - (or) npx jest
 
 ## License
 
