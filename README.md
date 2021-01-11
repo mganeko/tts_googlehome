@@ -106,9 +106,12 @@ TtsGoogleHome.castUrlToDeviceAsync('xxxxxxxx.local', url)
 - modify _conf/test_config.js
   - TEST_DEVICE1_HOSTNAME ... hostname or IP address of Device 1
   - TEST_DEVICE2_HOSTNAME ... hostname or IP address of Device 2
-- execute test
+- execute all test
   - npm test
   - (or) npx jest
+- execute single test (example)
+  - npx jest test_geturl.js
+  - (or) npx jest -t "NOT exist device"
 
 ## License
 
