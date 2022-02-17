@@ -3,3 +3,4 @@ _conf/test_config.js
 stock/
 test_old/
 *.tgz
+.DS_Store
